@@ -1,0 +1,15 @@
+alternc-proxy (0.0.0+211221102517) UNRELEASED; urgency=medium
+
+  * autobuild
+  * autobuild
+  * autobuild
+
+ -- Camille Lafitte <alternc@webelys.com>  Tue, 21 Dec 2021 10:25:17 +0100
+
+alternc-proxy (0.0.1) stable; urgency=low
+
+  * Provide a proxy template
+    Redirect domain to other server
+
+ -- Camille Lafitte <alternc@webelys.com>  Tue, 21 Dec 2021 09:52:00 +0200
+
