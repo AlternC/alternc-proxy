@@ -1,19 +1,12 @@
 language : bash
-env:
-    global:
-      - HUB_PROTOCOL=https
-      #GITHUB_TOKEN
-      - secure: "bPxk9oRsLzwfqutnD/CELhx6vLB7mds9hTbc47rGuixlQyKh7tw+YadbL7mURolE5eBcnohKoixnkO2BF3ysxwKipsdo8tm76RsfMMlAbWQUHjcQuBgn4PYJlVQOM1UiBQMV5m6dVSwB3jcROFGq8E74Z9L0mah6CharYoCr6EV8gDP4CBQEcWJ24IMLVnChU71XfyCkLENfzXYYd8jAFDzjg02glfK4O6wGGC+jXRbdDCooHkhnyYI5Dy7BFGMhJNGI5EGf2jF1Ms9tQ0QHITuwgTRfdZsFJ3fuujJOq2iMAJUg3nu4dNfssYxj+4Ors4tARXpftkm1yENtcOPOxyFSObJjmdASkmF8PftvgC5uZsgATFWUeqf6drnUKqIVIHUJDsdwvMlarAmo+evZgFhnVOIL9omk2aJqAcRtQMbM9njKumCDxUxsMRjSvl/4KPHgbiRcyqvws8UbGuR+yq3y7dvkxkk5fzP9AYPg5Q8JDslr7xhqkfoK2uWcgiZwmuf6IcPVj0T9+70MY5LM3ArOSefQEmrjfe11rONv9NKWqBUaDrg/+btwP2E8i0UGmBLc6z3KYZrHJGZ8U5oA4793645fDTWlt7lY6GQ0mby13Kf82XXRU5jWl2T1SuxkGV94PvmYHh5M2jyPBbu/coYmjX96FZuGwnW/tCTDXMM="
 branches:
   except:
   - nightly
 git:
   quiet: true
 before_install:
-    - curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo gpg --dearmor -o /usr/share/keyrings/githubcli-archive-keyring.gpg
-    - echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
     - sudo apt-get -qq update
-    - sudo apt-get install -y debhelper devscripts fakeroot build-essential po-debconf gh
+    - sudo apt-get install -y debhelper devscripts fakeroot build-essential po-debconf
     - openssl aes-256-cbc -K $encrypted_2155243bff9e_key -iv $encrypted_2155243bff9e_iv -in 077CC9F2.gpg.enc -out 077CC9F2.gpg -d
     - gpg --import 077CC9F2.gpg
 install:
